@@ -1,0 +1,16 @@
+
+
+1- install laravel --> create project blog
+
+2- you have 3 pages  (route)
+    1- welcome to ITI blog /iti
+   2- second page  (/posts)
+    display list of posts
+        each post (id , title, body)
+
+        display them in a cards
+
+    3- third page /posts/{id}  => display post content in a card
+
+
+    hint use templates ==>

@@ -1,0 +1,96 @@
+
+
+1- check php version
+    in terminal -> php -v
+
+2- install composer
+    https://getcomposer.org/
+
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php
+
+sudo mv composer.phar /usr/local/bin/composer
+
+php composer-setup.php --install-dir=bin --filename=composer
+
+
+
+3-check composer version
+    composer -v
+
+install these packages
+
+sudo apt-get install php-sqlite3
+sudo apt-get install php-xml
+
+
+
+
+4- create laravel project in any place you want
+composer create-project laravel/laravel myapp
+
+--> I don't need to add the laravel project in the /var/www/html
+as laravel run development server I can use later
+
+
+5- to start laravel project
+
+    -> laravel command line tool --artisan
+    --> to see available commands -->
+        php artisan
+
+
+
+
+from laravel 11
+project laravel- -> to run --> by default --> installed with default configuration
+connect to db --> db default is sqlite
+
+
+
+from laravel 11  ==> project connect default db  --> sqlite
+
+   INFO  Preparing database.
+
+  Creating migration table ....................................... 8.63ms DONE
+
+   INFO  Running migrations.
+
+  0001_01_01_000000_create_users_table ........................... 8.54ms DONE
+  0001_01_01_000001_create_cache_table ........................... 3.12ms DONE
+  0001_01_01_000002_create_jobs_table ............................ 8.65ms DONE
+
+
+==? create default  tables in the db ===?
+
+
+--------------------------------------------------------------------------
+
+Design pattern
+https://refactoring.guru/design-patterns
+
+
+//////////////////////////////// Day01
+
+Routes in laravel
+1- https://laravel.com/docs/11.x/routing#required-parameters
+
+
+
+
+############### laravel introduce --> template engine
+
+
+
+
+
+
+
+
+
+
+
+
+
+

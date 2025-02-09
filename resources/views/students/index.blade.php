@@ -1,4 +1,5 @@
 @extends("layouts.app")
+@section("title") All Students @endsection
 
 
 @section("section1")

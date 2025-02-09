@@ -8,5 +8,14 @@ https://laravel.com/docs/11.x/blade
 
 
 
+2- controller
+https://laravel.com/docs/11.x/controllers
+
+artisan tool ==> can be used to run administrative - automate tasks on project
+--> php artisan ---> commands --> make ??
+
+php artisan make:controller StudentController
+
+
 
 

@@ -1,5 +1,6 @@
 @extends("layouts.app")
 
+@section("title") Student Information @endsection
 
 @section("main")
 

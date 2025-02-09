@@ -42,25 +42,7 @@ Route::get("/students", function () {
 
 ### get student profile
 # url only integer
-Route::get("/students/{id}", function ($id) {
-    $students = [
-        ["id"=>1, "name"=>"John Doe", "email"=>"johndoe@email.com"],
-        ["id"=>2, "name"=>"new user", "email"=>"user@email.com"],
-        ["id"=>3, "name"=>"new student", "email"=>"student@email.com"],
-    ];
 
-    $filtered_student = array_filter($students, function($student) use ($id) {
-        return $student["id"] == $id;
-    });
-    if (count($filtered_student) > 0) {
-        $student = reset($filtered_student);
-        return view("students.show", compact("student"));
-    }
-
-    return "<h1 style='color: red;'> No student found with id {$id} </h1>";
-})
-    ->where('id', '[0-9]+')
-    ->name("students.show");
 
 
 
@@ -71,19 +53,15 @@ Route::get("/home", function () {
 });
 
 
-// I need to send data to the view from the controller
+// I need the controller function that will be applied when the url called
 
-Route::get("/students/home", function () {
-    $students = $students = [
-        ["id"=>1, "name"=>"John Doe", "email"=>"johndoe@email.com"],
-        ["id"=>2, "name"=>"new user", "email"=>"user@email.com"],
-        ["id"=>3, "name"=>"new student", "email"=>"student@email.com"],
-    ];
+use App\Http\Controllers\StudentController;
 
-   return view('land', ['students' => $students]);
-})->name("students.home");
+Route::get("/students/home",[StudentController::class, "home"] )->name("students.home");
 
-
+Route::get("/students/{id}", [StudentController::class, "show"] )
+    ->where('id', '[0-9]+')
+    ->name("students.show");
 
 
 

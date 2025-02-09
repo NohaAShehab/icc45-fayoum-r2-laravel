@@ -17,5 +17,42 @@ artisan tool ==> can be used to run administrative - automate tasks on project
 php artisan make:controller StudentController
 
 
+----------------------------------------------
+3- using databases
+
+    -->> to connect to database --> we need to use models
+
+    -->> before we use models ..? we must connect laravel project to the database
+
+    ==> by default --> laravel project
+    have files  ---> reflect any changes --// reflect structure of the db
+    it uses --> files migration files
+
+    --> by default from laravel 11, application will not start unless
+    you run migration ???
+
+    --> laravel create table in the db --> to track session ??
+
+    --> run this command ??
+    php artisan migrate --->
+
+
+
+migration files --> used to apply changes to the database
+php artisan migrate --> call the up function in the migration file
+
+php artisan migrate:rollback ==> call down function in the migration file
+
+when php artisan migrate --> laravel check if the migration files names in migration -->
+if yes nothing to migrate
+if it found migration file not in the migration table --> it will run it.
+
+
+------------------------
+use migration files --> create table products -->
+products  (id , name, description, price)
+
+I need to generate new migration file ???
+php artisan make:migration create_products_table
 
 

@@ -8,6 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * // this function will run ? php artisan migrate
      */
     public function up(): void
     {

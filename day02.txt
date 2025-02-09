@@ -4,6 +4,9 @@
 
 1- template inheritance
 
+https://laravel.com/docs/11.x/blade
+
+
 
 
 

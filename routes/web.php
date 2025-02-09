@@ -51,10 +51,10 @@ Route::get("/students/{id}", function ($id) {
 
     $filtered_student = array_filter($students, function($student) use ($id) {
         return $student["id"] == $id;
-    });  # return with array --->
+    });
     if (count($filtered_student) > 0) {
-//        var_dump($filtered_student);
-        return current($filtered_student);   # first element in the array
+        $student = reset($filtered_student);
+        return view("students.show", compact("student"));
     }
 
     return "<h1 style='color: red;'> No student found with id {$id} </h1>";
@@ -73,7 +73,7 @@ Route::get("/home", function () {
 
 // I need to send data to the view from the controller
 
-Route::get("/landing", function () {
+Route::get("/students/home", function () {
     $students = $students = [
         ["id"=>1, "name"=>"John Doe", "email"=>"johndoe@email.com"],
         ["id"=>2, "name"=>"new user", "email"=>"user@email.com"],
@@ -81,7 +81,7 @@ Route::get("/landing", function () {
     ];
 
    return view('land', ['students' => $students]);
-});
+})->name("students.home");
 
 
 

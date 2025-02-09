@@ -1,0 +1,25 @@
+
+
+
+1- connect project to mysql
+
+2- use migration files to create table posts --->
+    (id , title, description , image )
+
+3- create controller class have 3 functions
+    index
+        --> when it called --> display all posts in a card
+    show
+        --> when called display selected post in a card
+
+    delete
+        --> when it called delete post from the database
+
+4- you must use bootstrap and template inheritance to create views (index, show )for products
+
+5- you must use the url names in your views files
+
+6- bonus ===> create folder(images) ==> add posts images in --> display it in index , show
+
+7- bonus ===> create 100 post --> use pagination(5) to display them
+

@@ -64,6 +64,17 @@ Route::get("/students/{id}", [StudentController::class, "show"] )
     ->name("students.show");
 
 
+// add products routes
+use App\Http\Controllers\ProductController;
+
+Route::get("/products",[ProductController::class, "index"] )->name("products.index");
+Route::get("/products/{id}", [ProductController::class, "show"] )
+    ->name("products.show")->where('id', '[0-9]+');
+
+Route::get("/products/{id}/delete", [ProductController::class, "destroy"] )->name("products.destroy");
+
+
+
 
 
 

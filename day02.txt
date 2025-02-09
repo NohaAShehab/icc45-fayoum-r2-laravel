@@ -73,5 +73,34 @@ php artisan make:migration add_image_to_products_table --table=products
 
 
 
+///// create page index --> list all products from db
+/// create page show - -> get product info and display it
+//// 1- we need controller
+php artisan make:controller ProductController
+/// 2- assign controller functions to routes
+
+3- we need a model --> represent products table in db ??
+
+https://laravel.com/docs/11.x/eloquent#retrieving-models
+
+
+make model class  ===> php artisan make:model Product
+
+==> create class Product ---> laravel Product  --> represent table in db --> products
+
+laravel provide functions ==> query on table ??
+
+select * from products;
+====
+Product::all();
+
+-=== retrieve single object
+https://laravel.com/docs/11.x/eloquent#retrieving-single-models
+--------------------------------------------------------
+
+
+
+
+
 
 

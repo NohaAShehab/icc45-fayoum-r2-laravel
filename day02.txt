@@ -59,8 +59,16 @@ php artisan make:migration create_products_table
 // by default when you create table via migration files ??
 columns by default not null , unless you say it accepts null
 
+// migration like version control  --> track changes on the db --?
+// you create migration file --> contains changes on the db
+
+php artisan make:migration alter_price_column --table=products
 
 
+
+//// add new column to the table
+
+php artisan make:migration add_image_to_products_table --table=products
 
 
 

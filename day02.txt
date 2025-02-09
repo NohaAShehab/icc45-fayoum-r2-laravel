@@ -56,3 +56,14 @@ I need to generate new migration file ???
 php artisan make:migration create_products_table
 
 
+// by default when you create table via migration files ??
+columns by default not null , unless you say it accepts null
+
+
+
+
+
+
+
+
+

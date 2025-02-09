@@ -37,8 +37,7 @@ Route::get("/students", function () {
     ];
 
     return $students;
-
-});
+})->name("students.index");
 
 
 ### get student profile
@@ -59,7 +58,9 @@ Route::get("/students/{id}", function ($id) {
     }
 
     return "<h1 style='color: red;'> No student found with id {$id} </h1>";
-})->where('id', '[0-9]+');
+})
+    ->where('id', '[0-9]+')
+    ->name("students.show");
 
 
 

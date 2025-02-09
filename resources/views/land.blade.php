@@ -8,6 +8,29 @@
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">ITI website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route("students.index")}}">Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">landing</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
 
 <div class="container">
     <h1 style="color: purple"> All students </h1>
@@ -16,12 +39,14 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Show</th>
         </tr>
         @foreach($students as $student)
             <tr>
                 <td> {{$student['id'] }}</td>
                 <td> {{$student["name"]}}</td>
                 <td>{{$student["email"]}}</td>
+                <td><a href="{{route("students.show", $student['id'])}}" class="btn btn-info"> Show</a></td>
             </tr>
 
         @endforeach

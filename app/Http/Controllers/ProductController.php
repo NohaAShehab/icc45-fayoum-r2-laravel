@@ -11,10 +11,9 @@ class ProductController extends Controller
 
     function index(){
 
-        // I need to get all products from the database
-        $products = Product::all(); # array of model object --->
-//        return $products;
-//        return  view('products.index', compact('products'));
+//        $products = Product::all(); # array of model object --->
+        $products = Product::paginate(6);
+
         return view('products.index', ['products' => $products]);
     }
 

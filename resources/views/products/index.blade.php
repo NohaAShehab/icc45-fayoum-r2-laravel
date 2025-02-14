@@ -6,6 +6,7 @@
 
 @section('main')
     <h1 style="color: blue; text-align: center"> All products </h1>
+    <div class="d-flex justify-content-center">
     <div class="row row-cols-3 g-2">
     @foreach($products as $product)
 
@@ -22,5 +23,9 @@
         </div>
 
     @endforeach
+    </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        {{ $products->links() }}
     </div>
 @endsection

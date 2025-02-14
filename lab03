@@ -1,0 +1,19 @@
+
+1- create function create , store for posts
+
+2- create function edit, delete for posts
+
+DON'T forget to apply validation
+
+
+3- create seeder, factor for posts  (100)
+4- create seeder for users (50) user
+
+5- add post creator to the posts form
+--> post creator ===> drop down from 50 users
+
+-=> save post creator while creating post , edit
+
+
+###################
+bonus ===> add slug to the post.

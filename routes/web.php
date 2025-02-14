@@ -67,15 +67,17 @@ Route::get("/students/{id}", [StudentController::class, "show"] )
 // add products routes
 use App\Http\Controllers\ProductController;
 
-Route::get("/products",[ProductController::class, "index"] )->name("products.index");
-Route::get("/products/{id}", [ProductController::class, "show"] )
+Route::get("/product",[ProductController::class, "index"] )->name("products.index");
+Route::get("/product/create", [ProductController::class, "create"] )->name("products.create");
+Route::post('/product', [ProductController::class, "store"] )->name("products.store");
+Route::get("/product/{id}", [ProductController::class, "show"] )
     ->name("products.show")->where('id', '[0-9]+');
+//
+Route::get("/product/{id}/edit", [ProductController::class, "edit"] )->name("products.edit");
+Route::put("/product/{id}", [ProductController::class, "update"] )->name("products.update");
 
-Route::get("/products/{id}/delete", [ProductController::class, "destroy"] )->name("products.destroy");
-
-Route::get("/products/create", [ProductController::class, "create"] )->name("products.create");
-Route::post('/products', [ProductController::class, "store"] )->name("products.store");
-
+//Route::get("/products/{id}/delete", [ProductController::class, "destroy"] )->name("products.destroy");
+Route::delete("/product/{id}", [ProductController::class, "destroy"] )->name("products.destroy");
 
 
 

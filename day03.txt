@@ -16,3 +16,50 @@ use factory to seed db
 ---> create class product seeder
 
 php artisan make:seeder ProductSeeder
+
+
+-------------------------------------
+insert new product
+https://laravel.com/docs/11.x/eloquent#inserts
+
+
+====================================
+validate request data
+https://laravel.com/docs/11.x/validation#quick-writing-the-validation-logic
+
+validation types
+https://laravel.com/docs/11.x/validation#available-validation-rules
+
+share error --> laravel share errors via sessions
+
+
+// request methods
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+
+
+when need to perform any crud operation on  a resouce
+
+-->best practice to use request methods
+    product ->>
+    -> Get   /product ===> get all products
+    -> post  /product  ==>post new product  --> insert
+    -> get  /product/id  ==> get one product
+    -> put  /product/id ==> update product
+    -> delete /product/id ===> delete product
+
+    -> get /product/create ==> display form to create product
+    -> get /product/edit ==> display form to edit products
+
+
+
+
+
+
+
+
+
+
+
+
+

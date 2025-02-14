@@ -5,6 +5,7 @@
 
 @section("main")
 
+    @dump($color)
     <div class="card" style="width: 18rem;">
         <img src="{{asset("images/products/".$product->image)}}"
              height="200"

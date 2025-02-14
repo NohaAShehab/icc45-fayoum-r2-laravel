@@ -21,7 +21,13 @@
                 <h5 class="card-title">{{$product->name}}</h5>
                 <p class="card-text">Price: {{$product->price}}.</p>
                 <a href="{{route("products.show", $product->id)}}" class="btn btn-primary">Show </a>
-                <a href="{{route("products.destroy", $product->id)}}" class="btn btn-danger">Delete </a>
+                <a href="{{route("products.edit", $product->id)}}" class="btn btn-warning">Edit </a>
+{{--                <a href="{{route("products.destroy", $product->id)}}" class="btn btn-danger">Delete </a>--}}
+                <form action="{{route('products.destroy', $product->id)}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
             </div>
         </div>
 

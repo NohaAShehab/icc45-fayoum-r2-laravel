@@ -60,6 +60,13 @@ when need to perform any crud operation on  a resouce
 
 
 
+# slug  --> used in the urls --> instead of using ids ??
 
+# slug  --> based on  field --> --> unique  --> composed of field
+
+product --> apple laptop
+=> slug apple-laptop
+
+--->>slug ==> getting object
 
 

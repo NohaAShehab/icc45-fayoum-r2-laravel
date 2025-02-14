@@ -38,4 +38,30 @@ class ProductController extends Controller
         return to_route('products.index');
 
     }
+
+    function create(){
+        return view('products.create');
+    }
+    function store()
+    {
+        // I need to see the request data
+//        dd($_POST); # print variable then exit ;
+        # laravel  ==> request()
+//        dd(request());
+        $name = request('name');
+        $description = request('description');
+        $price = request('price');
+        $image = request('image');
+//        dd($name, $description, $price, $image);
+        # create product object then save it in the db
+        $product = new Product();
+        $product->name = $name;
+        $product->description = $description;
+        $product->price = $price;
+        $product->image = $image;
+        $product->save();
+//        dd($product);
+        return to_route('products.show',$product->id);
+//        return 'Product received';
+    }
 }

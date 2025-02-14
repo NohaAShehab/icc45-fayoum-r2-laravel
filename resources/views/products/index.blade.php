@@ -6,6 +6,9 @@
 
 @section('main')
     <h1 style="color: blue; text-align: center"> All products </h1>
+    <a href="{{route("products.create")}}" class="btn btn-dark justify-content-center">Add new product</a>
+
+
     <div class="d-flex justify-content-center">
     <div class="row row-cols-3 g-2">
     @foreach($products as $product)

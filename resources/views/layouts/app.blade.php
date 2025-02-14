@@ -38,11 +38,11 @@
             @yield("main")
         </div>
 
-        <div class="p-3 mb-2 bg-primary text-white">
+        <div class="bg-primary text-white">
             @yield("section1")
         </div>
 
-        <div class="p-3 mb-2 bg-warning text-dark">
+        <div class="bg-warning text-dark">
             @yield("section2")
         </div>
 </div>

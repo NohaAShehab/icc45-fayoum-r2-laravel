@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
@@ -42,10 +43,12 @@ class ProductController extends Controller
     }
 
     function create(){
-        return view('products.create');
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
     }
     function store()
     {
+//        dd(request()->all());
         // request() // return with request data
         // laravel provide  way to apply validation on post data ??
         request()->validate([
@@ -59,6 +62,7 @@ class ProductController extends Controller
         $description = request('description');
         $price = request('price');
         $image = request('image');
+        $category_id = request('category_id')? request('category_id') : null;
 
 
 //        dd($name, $description, $price, $image);
@@ -68,6 +72,7 @@ class ProductController extends Controller
         $product->description = $description;
         $product->price = $price;
         $product->image = $image;
+        $product->category_id = $category_id;
         $product->save();
         return to_route('products.show',$product->id);
     }

@@ -1,6 +1,7 @@
 <?php
 
 // add your routes
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -79,6 +80,7 @@ Route::put("/product/{id}", [ProductController::class, "update"] )->name("produc
 //Route::get("/products/{id}/delete", [ProductController::class, "destroy"] )->name("products.destroy");
 Route::delete("/product/{id}", [ProductController::class, "destroy"] )->name("products.destroy");
 
+Route::get("/category",[CategoryController::class, "index"] )->name("categories.index");
 
 
 

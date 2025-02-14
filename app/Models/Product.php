@@ -12,4 +12,13 @@ class Product extends Model
 
     // if you want product model --> represent table allproducts
     protected $table = 'products';
+
+    # model --> define relations inside model ??
+    # product has one category ??
+    function category(){
+        # this product belongs to one category
+        # select * from categories where id = product.category_id;
+        return $this->belongsTo(Category::class);
+
+    }
 }

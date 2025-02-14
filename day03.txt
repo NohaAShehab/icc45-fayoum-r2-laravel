@@ -70,3 +70,17 @@ product --> apple laptop
 --->>slug ==> getting object
 
 
+
+##### relation between models ??
+# add new table category??  name, description
+php artisan make:migration create_categories_table
+
+
+
+## we need to add category_id column to the products table ??
+php artisan make:migration add_category_id_to_products_table
+
+
+///inside the migration file
+    add column category_id
+    add fk constraint

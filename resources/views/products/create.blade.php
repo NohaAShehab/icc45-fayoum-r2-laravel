@@ -37,6 +37,18 @@
             <input type="text" class="form-control" id="image" value="{{old("image")}}"
                    name="image"  >
         </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Categories</label>
+            <select class="form-select" aria-label="Default select example" name="category_id">
+                <option selected disabled value="null">Open this select menu</option>
+                @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+
+
+            </select>
+
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 

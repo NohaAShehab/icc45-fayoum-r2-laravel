@@ -1,0 +1,18 @@
+
+
+create 100 product ??
+
+--> factory ??? ===> generate automatic 100 product
+
+
+use fake helper function to generate dump data
+https://laravel.com/docs/11.x/eloquent-factories#introduction
+https://laravel.com/docs/11.x/helpers#method-fake
+
+
+I need to seed db with 100 product -->
+use factory to seed db
+
+---> create class product seeder
+
+php artisan make:seeder ProductSeeder

@@ -19,9 +19,9 @@
                          class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$student->name}}</h5>
-                        <a href="" class="btn btn-primary">Show </a>
+                        <a href="{{route("student.show", $student)}}" class="btn btn-primary">Show </a>
                         <a href="" class="btn btn-warning">Edit </a>
-                        <form action="" method="post">
+                        <form action="{{route("student.destroy", $student)}}" method="post">
                             @csrf
                             @method('delete')
                             <input type="submit" value="Delete" class="btn btn-danger">

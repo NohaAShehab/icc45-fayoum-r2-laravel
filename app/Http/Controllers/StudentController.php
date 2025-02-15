@@ -72,6 +72,9 @@ class StudentController extends Controller
     public function show(Student $student)
     {
         //
+
+//        dd($student);
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -80,6 +83,7 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
         //
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -96,5 +100,8 @@ class StudentController extends Controller
     public function destroy(Student $student)
     {
         //
+        $student->delete();
+        // display confirmation before delete
+        return to_route('student.index')->with('success', 'Student deleted successfully');
     }
 }

@@ -46,6 +46,14 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        'studentimage' =>[
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/students'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
 
         's3' => [
             'driver' => 's3',

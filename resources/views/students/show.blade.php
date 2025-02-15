@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="text-center mt-3">
-        <img src="pic1.png" alt="Student Image" class="img-fluid rounded shadow" style="max-width: 200px;">
+        <img src="{{asset("storage/images/students/".$student->image)}}" alt="Student Image" class="img-fluid rounded shadow" style="max-width: 200px;">
     </div>
 </div>
 @endsection

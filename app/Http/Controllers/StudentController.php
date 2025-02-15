@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 # use resource controller  --> by default laravel provide pre-built functions --> can be used ?
 class StudentController extends Controller
@@ -32,6 +33,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+
+//        dd($request->all());
         //
         $request->validate([
            "name" => "required|min:2",
@@ -49,18 +52,21 @@ class StudentController extends Controller
             "grade.max"=>"Student grade must be at Most 100",
         ] // error messages ??
         );
-//        dd($request->name);
+        $imagename = null;
+        # if request has file --> save it ??
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            ## create storage link ???
+            # serving the files in storage folder --> link --> server
+            $imagename=$image->store('', 'studentimage');
+//            dd($imagename);
 
-//        dd($request->all());
-        # create object --->
 
-//        $student = Student::create([
-//           "name"=> $request->name,
-//            "email"=>$request->email,
-//            "grade"=>$request->grade,
-//            "image"=>$request->image
-//        ]);
-        $student = Student::create($request->all());
+        }
+        $request_data = $request->except(['image']);
+        $request_data['image'] = $imagename;
+//        dd($request_data);
+        $student = Student::create($request_data);
 
         return to_route('student.index')->with('success', 'Student created successfully');
 
@@ -99,7 +105,12 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        // I need to check if there is an image related to this object I need to delete it ??
+
+        if (Storage::disk('studentimage')->exists($student->image)) {
+            // ...
+            Storage::disk("studentimage")->delete($student->image);
+        }
         $student->delete();
         // display confirmation before delete
         return to_route('student.index')->with('success', 'Student deleted successfully');

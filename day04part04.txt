@@ -8,3 +8,8 @@ controller
 routes -> in web.php
 
 php artisan make:model Student -r -m
+
+
+#######################
+we need to create storage link ??
+allow project to access files stored in storage folder ??

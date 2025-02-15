@@ -6,7 +6,7 @@
 
 @section('main')
     <h1 style="color: blue; text-align: center"> All Students </h1>
-    <a href="" class="btn btn-dark justify-content-center">Add new student</a>
+    <a href="{{route("student.create")}}" class="btn btn-dark justify-content-center">Add new student</a>
 
 
     <div class="d-flex justify-content-center">
@@ -14,7 +14,7 @@
             @foreach($students as $student)
 
                 <div class="card" style="width: 18rem;">
-                    <img src="{{asset("images/students/".$student->image)}}"
+                    <img src="{{asset("storage/images/students/".$student->image)}}"
                          height="200"
                          class="card-img-top" alt="...">
                     <div class="card-body">

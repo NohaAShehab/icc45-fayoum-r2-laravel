@@ -1,0 +1,22 @@
+
+
+1- create model , migration , views , routes for category
+--> each post has one category
+
+--> use resource controller and resource route and mass assignment
+
+--> apply validation
+title  --> required , min:5 chars
+description --> min:5 max : 255
+image - -> apply validation image  (mimetype)
+
+
+--> customize validation messages
+
+
+--->use storage to save the image
+
+---> implement all crud operations  (list all, show , edit, delete , create)
+
+---------------------------------------------------
+bonus  --> use request classes --> search about it.

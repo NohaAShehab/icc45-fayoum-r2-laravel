@@ -1,0 +1,10 @@
+
+
+# application crud operation on students
+
+migration file
+models
+controller
+routes -> in web.php
+
+php artisan make:model Student -r -m

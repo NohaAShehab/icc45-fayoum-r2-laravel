@@ -1,0 +1,9 @@
+
+
+1- show page for the category ??
+
+--> display all products in this category
+
+select c.name as categoryname, p.name as productname from categories c, products p
+where c.id = 1
+and c.id = p.category_id;

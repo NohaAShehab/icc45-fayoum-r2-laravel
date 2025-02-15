@@ -80,7 +80,9 @@ Route::put("/product/{id}", [ProductController::class, "update"] )->name("produc
 //Route::get("/products/{id}/delete", [ProductController::class, "destroy"] )->name("products.destroy");
 Route::delete("/product/{id}", [ProductController::class, "destroy"] )->name("products.destroy");
 
-Route::get("/category",[CategoryController::class, "index"] )->name("categories.index");
+Route::get("/category",[CategoryController::class, "index"] )->name("category.index");
+Route::get("/category/{id}",[CategoryController::class, "show"] )->name("category.show");
+
 
 
 

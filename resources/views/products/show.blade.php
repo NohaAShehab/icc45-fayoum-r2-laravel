@@ -14,7 +14,16 @@
             <h5 class="card-title">{{$product->name}}</h5>
             <p class="card-text">Price: {{$product->price}}.</p>
             <p class="card-text">Category: {{$product->category_id}}.</p>
-            <h5 class="card-text">Category: {{$product->category ? $product->category->name : "no category"}}.</h5>
+            <h5 class="card-text">Category:
+                @if($product->category)
+                <a href="{{ route("category.show", $product->category->id) }}">
+                   {{ $product->category->name }}
+                </a>
+                @else
+                    <span style="color: red">No category selected</span>
+                @endif
+
+            </h5>
 
 
             <p class="card-text">Description: {{$product->description}}.</p>

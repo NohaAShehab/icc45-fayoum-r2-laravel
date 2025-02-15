@@ -16,6 +16,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{$category->name}}</h5>
             </div>
+            <a class="btn btn-info" href="{{route("category.show", $category->id)}}"> Show </a>
         </div>
 
     @endforeach

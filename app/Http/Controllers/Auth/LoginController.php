@@ -20,6 +20,12 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    // I can override the trait function
+//    function showLoginForm()
+//    {
+//        return view('students.create');
+//    }
+
     /**
      * Where to redirect users after login.
      *

@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+{{--                        @dump(Auth::user())--}}
+                        <div class="card shadow-sm text-center p-3" style="max-width: 300px;">
+                            <img src="{{asset("storage/".Auth::user()->image)}}" class="img-fluid rounded" alt="User Image">
+                        </div>
                 </div>
             </div>
         </div>

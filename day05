@@ -1,3 +1,11 @@
 
 # use login and register --> provided by laravel ??
 
+
+
+# employee has creator ---> the creator is the logged_in user
+/// 1- create migration file ?? contains --> field user_id, creator_id -->
+reference users -->
+
+
+php artisan make:model Employee

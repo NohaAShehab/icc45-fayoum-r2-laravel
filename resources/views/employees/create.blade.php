@@ -2,13 +2,13 @@
 @extends("layouts.app")
 
 
-@section("title") All Students @endsection
+@section("title") Add Employee @endsection
 
 @section('main')
 
     <div class="card shadow-lg p-4">
-        <h2 class="text-center mb-4">Student Form</h2>
-        <form method="POST" action="{{ route('student.store') }}" enctype="multipart/form-data">
+        <h2 class="text-center mb-4">Employee Form</h2>
+        <form method="POST" action="{{ route('employee.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -25,9 +25,9 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="grade" class="form-label">Grade</label>
-                <input type="number" class="form-control @error('grade') is-invalid @enderror" id="grade" name="grade" value="{{ old('grade') }}" placeholder="Enter your grade" >
-                @error('grade')
+                <label for="salary" class="form-label">Salary</label>
+                <input type="number" class="form-control @error('salary') is-invalid @enderror" id="salary" name="salary" value="{{ old('salary') }}" placeholder="Enter your salary" >
+                @error('salary')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

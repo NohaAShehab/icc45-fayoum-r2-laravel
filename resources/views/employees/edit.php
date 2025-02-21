@@ -5,10 +5,9 @@
 @section("title") All Students @endsection
 
 @section('main')
-
     <div class="card shadow-lg p-4">
         <h2 class="text-center mb-4">Student Form</h2>
-        <form method="POST" action="{{ route('student.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -33,7 +32,7 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Upload Image</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
+                <input type="text" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
                 @error('image')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

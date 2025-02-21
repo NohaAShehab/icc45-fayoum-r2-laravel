@@ -34,6 +34,7 @@ class StudentController extends Controller
     public function store(Request $request)
     {
 
+        // add the current  logged in user
 //        dd($request->all());
         //
         $request->validate([

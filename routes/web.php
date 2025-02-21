@@ -50,3 +50,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('employee', EmployeeController::class);
+
+# only authenticated users can see this page ???
+Route::get("/iti", function(){
+    return "<h1> Hello </h1>";
+})->middleware("auth");
+

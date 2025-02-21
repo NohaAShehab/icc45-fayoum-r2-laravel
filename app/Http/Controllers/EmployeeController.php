@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use Illuminate\Support\Facades\Gate;
+
 use Illuminate\Http\Request;
 
 use App\Models\Employee;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
+    function __construct(){
+        $this->middleware('auth')->only(['store', 'destroy']);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -64,7 +70,11 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        // if the current logged in user is the employee creator --> then he/she can edit
+//        Gate::authorize('update-employee', $employee);
+
+//        dd("You can update employee here");
+        return view('employees.edit', compact('employee'));
     }
 
     /**
@@ -73,6 +83,11 @@ class EmployeeController extends Controller
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
         //
+
+        dd($request->user(), $request);
+            # request object contains information about current logged in user
+
+        dd("update student");
     }
 
     /**
@@ -80,6 +95,14 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
+
+        // use gate in the controller >??
         //
+//        if (Storage::disk('employeesimages')->exists($employee->image)) {
+//            // ...
+//            Storage::disk("employeesimages")->delete($employee->image);
+//        }
+        $employee->delete();
+        return to_route('employee.index')->with('success', 'Employee Deleted Successfully');
     }
 }

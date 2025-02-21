@@ -20,13 +20,19 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$employee->name}}</h5>
                         <a href="{{route("employee.show", $employee)}}" class="btn btn-primary">Show </a>
-                        <a href="" class="btn btn-warning">Edit </a>
-                        <form action="{{route("employee.destroy", $employee)}}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input type="submit" value="Delete" class="btn btn-danger">
-                        </form>
+                        <a href="{{route("employee.edit", $employee)}}" class="btn btn-warning">Edit </a>
+
+                        @can("delete-employee", $employee)
+                            <form action="{{route("employee.destroy", $employee)}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value="Delete" class="btn btn-danger">
+                            </form>
+                        @else
+                            <span style="color: red"> You must be the owner</span>
+                        @endcanany
                     </div>
+
                 </div>
 
             @endforeach

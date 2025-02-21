@@ -9,3 +9,15 @@ reference users -->
 
 
 php artisan make:model Employee
+
+-------------------------------------------
+Authentication
+
+--> Middleware provide a convenient mechanism for
+inspecting and filtering HTTP requests entering your application.
+
+
+### only employee creator can delete the employee
+--> other wise you are not authorized
+
+

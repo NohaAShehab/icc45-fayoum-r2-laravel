@@ -1,0 +1,11 @@
+
+
+1- install laravel/ui in your project
+
+2- modify the code to make the post creator is the current logged in user
+
+
+3- allow only authenticated users to create, update, delete posts
+
+
+4- use gates to allow only post owner to update, delete post

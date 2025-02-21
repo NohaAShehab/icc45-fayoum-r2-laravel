@@ -37,7 +37,11 @@ class EmployeePolicy
      */
     public function update(User $user, Employee $employee): bool
     {
+
+        return  $user->id === $employee->creator_id;
         return false;
+        ### instead of defining gates in the app service provider
+        ///
     }
 
     /**

@@ -21,3 +21,8 @@ inspecting and filtering HTTP requests entering your application.
 --> other wise you are not authorized
 
 
+
+
+/// create column role --> usertable
+
+--> user->role ==='admin' --> define gate

@@ -1,0 +1,8 @@
+
+
+respond to the client with data
+
+--> best practice  --> uniform data representation?
+--> best practice--> response --> in form of object ??
+
+https://laravel.com/docs/11.x/eloquent-resources#main-content

@@ -56,3 +56,17 @@ Route::get("/iti", function(){
     return "<h1> Hello </h1>";
 })->middleware("auth");
 
+
+Route::get("/data", function(){
+    return "Hello";
+});
+
+//use App\Models\Employee;
+//Route::get("/emp/{id}", function($id){
+//    $employee = Employee::findOrfail($id);  # array of model objects
+//
+//    # laravel --> serialize the data automaically
+//    #
+//    return $employee;  ### serialization
+//    # laravel --> return data in form of  array of json ??
+//});

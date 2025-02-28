@@ -1,0 +1,9 @@
+
+
+1- using api.php route file inside project
+--> any routes --> inside file api.php ??can be accessed
+can be accessed by api/routename
+
+
+// I need to create apis . endpoints  ,, mobile , frontend take data
+and represent it as needed...

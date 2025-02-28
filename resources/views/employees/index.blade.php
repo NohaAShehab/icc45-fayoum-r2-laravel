@@ -7,6 +7,7 @@
 @section('main')
     <h1 style="color: blue; text-align: center"> All Employees </h1>
     <a href="{{route("employee.create")}}" class="btn btn-dark justify-content-center">Add new employee</a>
+    {{$employees->links()}}
 
 
     <div class="d-flex justify-content-center">
@@ -37,6 +38,8 @@
 
             @endforeach
         </div>
+
+
     </div>
 
 @endsection

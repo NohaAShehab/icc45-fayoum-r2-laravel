@@ -10,10 +10,16 @@ class Employee extends Model
     /** @use HasFactory<\Database\Factories\EmployeeFactory> */
     use HasFactory;
     protected $fillable = [
-        "name", "email", "salary", "image", "creator_id"
+        "name", "email", "salary", "image", "creator_id",
+        "department_id"
+
     ];
 
     function creator(){
         return $this->belongsTo(User::class);
+    }
+
+    function department(){
+        return $this->belongsTo(Department::class);
     }
 }

@@ -45,7 +45,8 @@ class EmployeeController extends Controller
 
         $employee = Employee::create($request_data);
 //        return $employee;
-        return response()->json($employee)->setStatusCode(201)->header('Content-Type', 'application/json');
+//        return response()->json($employee)->setStatusCode(201)->header('Content-Type', 'application/json');
+        return new EmployeeResource($employee);
     }
 
     /**

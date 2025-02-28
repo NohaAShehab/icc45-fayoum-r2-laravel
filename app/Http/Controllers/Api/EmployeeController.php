@@ -7,14 +7,25 @@ use App\Models\Employee;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Resources\EmployeeResource;
+use Illuminate\Support\Facades\Auth;
+
 # Api resource controller  --> exclude edit , create function
 class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    function __construct()
+    {
+        $this->middleware("auth:sanctum");
+    }
+
     public function index()
     {
+
+//        dd(Auth::user());
+//        return Auth::user();
         //
 //        return Employee::all();
 //        return response()->json(Employee::all())->setStatusCode(200);
@@ -40,6 +51,7 @@ class EmployeeController extends Controller
         }
         $request_data = $request->except(['image']);
         $request_data['image'] = $imagename;
+        $request_data['creator_id'] = Auth::id();
         // 1- show request details
 //         return $request->all();
 

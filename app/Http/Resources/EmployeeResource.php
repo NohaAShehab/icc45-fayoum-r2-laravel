@@ -21,7 +21,8 @@ class EmployeeResource extends JsonResource
             "employeeEmail"=>$this->email,
             "image"=>asset("storage/images/employees/".$this->image),
 //            "department_id"=>$this->department->name  ?? null,
-            "department" =>  new DepartmentResource($this->department)?? null
+            "department" =>  new DepartmentResource($this->department)?? null,
+            "created_by"=> new UserResource($this->creator) ?? null
 
         ];
     }

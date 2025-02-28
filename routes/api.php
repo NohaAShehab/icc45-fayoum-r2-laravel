@@ -54,3 +54,68 @@ Route::apiResource("/employee", EmployeeController::class );
   DELETE          api/employee/{employee} ..................... employee.destroy › Api\EmployeeController@destroy
 
  */
+
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
+Route::post('/sanctum/token', function (Request $request) {
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+        'device_name' => 'required',
+    ]);
+
+    $user = User::where('email', $request->email)->first();
+
+    if (! $user || ! Hash::check($request->password, $user->password)) {
+        throw ValidationException::withMessages([
+            'email' => ['The provided credentials are incorrect.'],
+            "password"=> "The provided password is incorrect."
+        ]);
+    }
+
+//    return $user;
+    // get number of current tokens per user??
+    $number_of_tokens = $user->tokens->count();
+//    return $number_of_tokens;
+    if($number_of_tokens < 3){
+        // if count < 3==> create token ??
+
+        return $user->createToken($request->device_name)->plainTextToken;
+    }
+
+    throw ValidationException::withMessages([
+        "message"=>"You have exceeded number of devices you are logging in.,please logout from one of them"
+    ]);
+
+
+});
+
+
+
+/// use  token ???
+
+
+
+
+/// logout =-> method post -->
+
+// Take care that this route uses the authentication
+Route::post("/logout_current", function(){
+   $user = auth()->user(); // Auth --> provide auth ==> user()
+//    return $user;
+    $user->currentAccessToken()->delete();
+    return response()->noContent();
+
+})->middleware('auth:sanctum');
+
+
+
+
+Route::post("/logoutFromAllDevices", function(){
+
+    $user = auth()->user();
+    $user->tokens()->delete();
+    return response()->noContent();
+})->middleware('auth:sanctum');

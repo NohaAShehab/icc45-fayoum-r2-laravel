@@ -65,6 +65,9 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{route("github.redirect")}}" class="btn btn-dark">
+                        {{ __('Login with Github') }}
+                    </a>
                 </div>
             </div>
         </div>

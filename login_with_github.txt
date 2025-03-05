@@ -1,0 +1,8 @@
+
+
+1- go github --> allow laravel app to communicate with you
+
+after authorize the app by github
+
+we need to use success authorization to get the information
+of the user--> to save it in the db, and use github later in login

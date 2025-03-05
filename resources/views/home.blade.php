@@ -17,7 +17,12 @@
                     {{ __('You are logged in!') }}
 {{--                        @dump(Auth::user())--}}
                         <div class="card shadow-sm text-center p-3" style="max-width: 300px;">
-                            <img src="{{asset("storage/".Auth::user()->image)}}" class="img-fluid rounded" alt="User Image">
+                            @if(Auth::user()->github_id)
+                                <img src="{{Auth::user()->image}}" class="img-fluid rounded" alt="User Image">
+                            @else
+                                <img src="{{asset("storage/".Auth::user()->image)}}" class="img-fluid rounded" alt="User Image">
+
+                            @endif
                         </div>
                 </div>
             </div>

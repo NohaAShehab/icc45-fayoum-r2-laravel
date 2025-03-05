@@ -34,5 +34,11 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+//        'redirect' => 'http://127.0.0.1:8000/employee',
+        'redirect' => 'http://127.0.0.1:8000/auth/callback',
+    ]
 
 ];

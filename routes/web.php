@@ -70,3 +70,14 @@ Route::get("/data", function(){
 //    return $employee;  ### serialization
 //    # laravel --> return data in form of  array of json ??
 //});
+
+use App\Http\Controllers\LoginWithGithub;
+
+Route::get("/login/github", [LoginWithGithub::class, "loginWithGit"])->name("login.github");
+
+
+
+Route::get('/auth/redirect', [LoginWithGithub::class, "redirect"])
+    ->name("github.redirect");
+
+Route::get('/auth/callback', [LoginWithGithub::class, "callback"]);
